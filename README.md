@@ -1,5 +1,5 @@
 # Create-subdomian-fortest
-##Crate subdomain
+
 ### step 1: Clone wilfly server
 ### step 2: sửa file host máy trong C:\Windows\System32\drivers\etc:
 #### 172.16.0.120 trieunv.vn
