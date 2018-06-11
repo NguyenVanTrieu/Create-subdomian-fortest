@@ -1,0 +1,27 @@
+		<interfaces>
+		   <interface name="management">
+			   <inet-address value="${jboss.bind.address.management:127.0.0.1}"/>
+		   </interface>
+		   <interface name="public">
+			   <inet-address value="${jboss.bind.address:127.0.0.1}"/>
+		   </interface>
+		   <interface name="unsecure">
+			   <inet-address value="${jboss.bind.address.unsecure:127.0.0.1}"/>
+		   </interface>
+		   <interface name="any">
+			   <any-address/>
+		   </interface>
+	   </interfaces>
+
+	   <socket-binding-group name="standard-sockets" default-interface="any" port-offset="${jboss.socket.binding.port-offset:200}">
+		   <socket-binding name="management-http" interface="any" port="${jboss.management.http.port:19991}"/>
+		   <socket-binding name="management-https" interface="any" port="${jboss.management.https.port:19994}"/>
+		   <socket-binding name="ajp" interface="any" port="${jboss.ajp.port:19009}"/>
+		   <socket-binding name="http" interface="any" port="${jboss.http.port:18080}"/>
+		   <socket-binding name="https" interface="any" port="${jboss.https.port:18280}"/>
+		   <socket-binding name="txn-recovery-environment" port="14714"/>
+		   <socket-binding name="txn-status-manager" port="14715"/>
+		   <outbound-socket-binding name="mail-smtp">
+			   <remote-destination host="localhost" port="125"/>
+		   </outbound-socket-binding>
+	   </socket-binding-group>
